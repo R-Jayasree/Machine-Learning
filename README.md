@@ -31,8 +31,8 @@ The dataset contains user details, property attributes, and loan-related feature
 - Applied 5-fold cross-validation to ensure model robustness
 
 ## Results Summary
-- R² Score ≈ 0.83
-- RMSE ≈ 340.0
+- R² Score ≈ 0.62
+- RMSE ≈ 26895.81
 - Most Influential Features: Income, Credit Score
 - No significant overfitting observed
 
