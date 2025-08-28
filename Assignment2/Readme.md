@@ -48,7 +48,7 @@ cd Machine-Learning/Assignment3
 pip install pandas numpy matplotlib seaborn scikit-learn
 ```
 3. Run the Jupyter Notebook: Open and run the ml_Mail.ipynb notebook in a Jupyter environment. Ensure the train.csv dataset is in the correct path as specified in the notebook.
-4. 
+
 ## Learning Outcomes
 - Applied linear regression to real-world prediction tasks
 - Gained insight into preprocessing steps like encoding and scaling
@@ -56,7 +56,5 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 - Visualized model accuracy and error distribution
 - Learned the role of cross-validation in reliable evaluation
 
-## Notes
-- Python code and visualizations included
-- Summary tables and learning outcomes are documented
+
 
