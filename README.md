@@ -6,10 +6,10 @@ This repository contains all the code and materials for the **ICS1512 Machine Le
 
 The repository is organized into folders, with each folder corresponding to a specific experiment or assignment from the course.
 
-  * **`Experiment_1/`**: Working with essential Python packages for machine learning, including `Numpy`, `Scipy`, `Scikit-learn`, and `Matplotlib`.
-  * **`Experiment_2/`**: Application of **Linear Regression** for loan amount prediction.
-  * **`Experiment_3/`**: Application of **Support Vector Machine (SVM)** for the classification of e-mail spam data.
-  * **`Experiment_4/`**: Application of the **Decision Tree Algorithm** for diabetes prediction.
+  * **`Assignment 1/`**: Working with essential Python packages for machine learning, including `Numpy`, `Scipy`, `Scikit-learn`, and `Matplotlib`.
+  * **`Assignment 2/`**: Application of **Linear Regression** for loan amount prediction.
+  * **`Assignment 3/`**: Application of **Support Vector Machine (SVM)** for the classification of e-mail spam data.
+  * **`Assignment 4/`**: Application of the **Decision Tree Algorithm** for diabetes prediction.
 
 ### **Getting Started**
 
