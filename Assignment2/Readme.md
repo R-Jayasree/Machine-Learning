@@ -40,8 +40,8 @@ The dataset contains user details, property attributes, and loan-related feature
 1. Clone the repository:
 
 ```
-git clone https://github.com/yuvashreeph/Machine-Learning.git
-cd Machine-Learning/Assignment3
+git clone https://github.com/R-Jayasree/Machine-Learning.git
+cd Machine-Learning/Assignment2
 ```
 2. Install the required libraries:
 ```
