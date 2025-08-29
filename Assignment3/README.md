@@ -1,12 +1,12 @@
 # Spam Mail Prediction using Multiple Classification Models
 
-## 📖 Project Overview
+## Objective
 
-This project focuses on building and evaluating a suite of machine learning models to classify emails as "spam" or "not spam". The primary goal is to compare various classification algorithms, from simple baselines to powerful ensemble methods, and identify the most effective model for this task. The project follows a structured machine learning workflow, including data preprocessing, exploratory data analysis, model training, hyperparameter tuning, and robust evaluation using K-fold cross-validation.
+To evaluate a suite of machine learning models to classify emails as "spam" or "not spam". The primary goal is to compare various classification algorithms, from simple baselines to powerful ensemble methods, and identify the most effective model for this task. 
 
 -----
 
-## 📊 Dataset
+## Dataset
 
 The experiment uses the "Spam Mail" dataset, which contains pre-extracted features from emails. The dataset consists of 57 features, primarily related to word and character frequencies, and a target variable indicating whether the email is spam.
 
@@ -16,7 +16,7 @@ The experiment uses the "Spam Mail" dataset, which contains pre-extracted featur
 
 -----
 
-## 🤖 Models Implemented
+## Models Implemented
 
 A comprehensive set of 13 classification models were trained and evaluated to provide a thorough comparison:
 
@@ -42,7 +42,7 @@ A comprehensive set of 13 classification models were trained and evaluated to pr
 
 -----
 
-## ⚙️ Methodology
+## Methodology
 
 The project follows a standard machine learning pipeline:
 
@@ -71,7 +71,7 @@ The project follows a standard machine learning pipeline:
 
 -----
 
-## 📈 Results
+## Results
 
 The ensemble methods demonstrated clear superiority over simpler models. The **XGBoost Classifier** emerged as the top-performing model across all evaluation metrics.
 
@@ -92,12 +92,12 @@ The ensemble methods demonstrated clear superiority over simpler models. The **X
 
 -----
 
-## 🚀 How to Run
+## How to Run
 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yuvashreeph/Machine-Learning.git
+    git clone https://github.com/R-Jayasree/Machine-Learning.git
     cd Machine-Learning/Assignment3
     ```
 
