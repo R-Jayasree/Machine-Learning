@@ -112,7 +112,7 @@ The ensemble methods demonstrated clear superiority over simpler models. The **X
 
 -----
 
-## 🛠️ Libraries Used
+## Libraries Used
 
   - `pandas`
   - `numpy`
