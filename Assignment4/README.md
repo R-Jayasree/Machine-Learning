@@ -1,12 +1,15 @@
-# Ensemble Model Evaluation for Breast Cancer Diagnosis
+# Assignment 4 : Ensemble Prediction and Decision Tree Model Evaluation
 
-📖 **Project Overview**
+## **Objective** 
+To build classifiers such as Decision Tree, AdaBoost, Gradient Boosting, XGBoost, Random Forest, and Stacked Models (using SVM, Na¨ıve Bayes, Decision Tree) and evaluate their performance through 5-Fold Cross-Validation and hyperparameter tuning.
+ 
+## **Task Overview**
 
-This project provides a comprehensive analysis and comparison of a single Decision Tree classifier against various advanced ensemble methods for the task of breast cancer diagnosis. The core of the project is a single Python script designed for Google Colab that implements a full machine learning pipeline, from data preprocessing to model evaluation. A detailed LaTeX report accompanies the code, documenting the experiment's aim, methodology, results, and conclusions.
+This task provides a comprehensive analysis and comparison of a single Decision Tree classifier against various advanced ensemble methods for the task of breast cancer diagnosis. The core of the task is to implement a full machine learning pipeline, from data preprocessing to model evaluation. A detailed LaTeX report accompanies the code, documenting the experiment's aim, methodology, results, and conclusions.
 
 The primary goal is to determine if ensemble techniques (bagging, boosting, and stacking) offer a significant performance improvement over a single decision tree for this classification problem.
 
-📊 **Dataset**
+## **Dataset**
 
 The experiment utilizes the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset.
 
@@ -15,7 +18,7 @@ The experiment utilizes the **Wisconsin Diagnostic Breast Cancer (WDBC)** datase
 -   **Target Variable:** A binary variable `Diagnosis` indicating whether a tumor is malignant (M) or benign (B).
 -   **Preprocessing:** The raw data is cleaned by dropping the non-predictive ID column, encoding the target variable, and scaling all features using `StandardScaler` to ensure optimal model performance.
 
-🤖 **Models Implemented**
+## **Models Implemented**
 
 A diverse set of classification models were trained and evaluated to provide a thorough comparison:
 
@@ -29,7 +32,7 @@ A diverse set of classification models were trained and evaluated to provide a t
 -   **Stacking Ensemble**
     -   Three different configurations were tested, combining base models like SVM, Naive Bayes, Decision Tree, and KNN with a final meta-learner.
 
-⚙️ **Methodology**
+## **Methodology**
 
 The project follows a structured and robust machine learning workflow:
 
@@ -42,7 +45,7 @@ The project follows a structured and robust machine learning workflow:
     -   The final performance is reported on the held-out test set.
     -   **Feature Importance** plots are generated for each model to provide insight into its decision-making process.
 
-📈 **Results**
+## **Results**
 
 After a comprehensive evaluation, the ensemble methods demonstrated a clear and consistent performance advantage over the single Decision Tree.
 
@@ -60,21 +63,26 @@ After a comprehensive evaluation, the ensemble methods demonstrated a clear and 
 | Random Forest | 0.9626 | 0.9737 | 0.9737 |
 | Decision Tree | 0.9451 | 0.9474 | 0.9474 |
 
-🚀 **How to Run**
+## How to Run
 
-1.  **Set up Google Drive:**
-    -   In your Google "My Drive", create a folder named `ML_LAB`.
-    -   Inside `ML_LAB`, create another folder named `BreastCancer_WinconsinDiagnostic`.
-    -   Upload the `wdbc.data` file into this folder.
+1.  **Clone the repository:**
 
-2.  **Run in Google Colab:**
-    -   Open a new Google Colab notebook.
-    -   Copy the entire content of the final Python script into a single cell.
-    -   Run the cell. The script will automatically mount your Google Drive, load the data, train all models, and display all results, tables, and plots.
+    ```bash
+    git clone https://github.com/R-Jayasree/Machine-Learning.git
+    cd Machine-Learning/Assignment4
+    ```
 
-3.  **View the Report:** The detailed analysis and findings are documented in the accompanying LaTeX report PDF.
+2.  **Install the required libraries:**
 
-🛠️ **Libraries Used**
+    ```bash
+    pip install pandas numpy matplotlib seaborn scikit-learn xgboost
+    ```
+
+3.  **Run the Jupyter Notebook:**
+    Open and run the notebook in a Jupyter environment. Ensure the `wdbc.csv` dataset is in the correct path as specified in the notebook.
+
+
+## **Libraries Used**
 
 -   `pandas`
 -   `numpy`
@@ -82,4 +90,7 @@ After a comprehensive evaluation, the ensemble methods demonstrated a clear and 
 -   `seaborn`
 -   `scikit-learn`
 -   `xgboost`
--   `google-colab`
+
+
+
+
