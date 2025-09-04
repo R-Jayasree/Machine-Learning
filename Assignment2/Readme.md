@@ -1,40 +1,91 @@
-# Assignment 2: Loan Amount Prediction using Linear Regression
+# Assignment 2: Loan Sanction Amount Prediction using Multiple Regression Models
 
 ## Objective
-To build and evaluate a Linear Regression model to predict loan sanction amounts based on user and property attributes using a real-world dataset.
+To build and evaluate different Regression models to predict loan sanction amounts based on user and property attributes using a real-world dataset. To compare the performance of eleven different regression algorithms to identify the most accurate model.
 
-## Dataset Description
-The dataset contains user details, property attributes, and loan-related features including:
-- Income
-- Age
-- Credit Score
-- Loan Amount Requested
-- Property Price, Type, Age
-- Employment and Profession
-- Current Loan Expenses, Defaults
+## Table of Contents
 
-## Tools and Libraries Used
-- Python
-- Pandas
-- NumPy
-- Scikit-learn (LinearRegression, metrics, preprocessing)
-- Matplotlib and Seaborn for plots
+  - [Project Overview]
+  - [Dataset]
+  - [Methodology]
+  - [Models Implemented]
+  - [Results]
+  - [Files in this Repository]
+  - [How to Run]
+  - [Libraries Used]
 
-## Tasks Performed
-- Handled missing values and encoded categorical features
-- Performed standardization using `StandardScaler`
-- Conducted Exploratory Data Analysis (EDA)
-- Trained a Linear Regression model using Scikit-learn
-- Evaluated the model using MAE, MSE, RMSE, and R² score
-- Visualized predicted vs actual values and residuals
-- Analyzed feature importance using model coefficients
-- Applied 5-fold cross-validation to ensure model robustness
+## Dataset
 
-## Results Summary
-- R² Score ≈ 0.62
-- RMSE ≈ 26895.81
-- Most Influential Features: Income, Credit Score
-- No significant overfitting observed
+The dataset used for this project is `loan_sanction.csv`, containing various customer attributes.
+
+**Key Features:**
+
+  - Customer Demographics (`Gender`, `Dependents`)
+  - Financial Information (`Income (USD)`, `Credit Score`, `Current Loan Expenses (USD)`)
+  - Employment Details (`Type of Employment`, `Income Stability`)
+  - Property Information (`Property Location`, `Property Age`)
+
+**Target Variable:**
+
+  - `Loan Sanction Amount (USD)`
+
+## Methodology
+
+The project follows a standard machine learning pipeline:
+
+1.  **Data Loading:** The dataset is loaded using pandas.
+2.  **Data Preprocessing:**
+      - **Missing Value Imputation:** Null values are handled using mean/median for numerical columns and mode/default values for categorical ones.
+      - **Outlier Capping:** Outliers are managed by capping them at the 5th and 95th percentiles.
+      - **Categorical Encoding:** Non-numeric features are converted into a machine-readable format using `LabelEncoder`.
+      - **Feature Standardization:** Numerical features are scaled using `StandardScaler`.
+3.  **Exploratory Data Analysis (EDA):** Visualizations like distribution plots, scatter plots, and a correlation heatmap are used to understand the data's characteristics.
+4.  **Train/Test Split:** The preprocessed data is split into training, validation, and test sets.
+5.  **Model Training & Hyperparameter Tuning:** Eleven different regression models are trained on the data. `GridSearchCV` is used for hyperparameter tuning.
+6.  **Model Evaluation:** Models are evaluated based on MAE, MSE, RMSE, and R² Score.
+
+## Models Implemented
+
+A total of eleven regression models were trained and compared:
+
+1.  Linear Regression
+2.  Ridge Regression
+3.  Lasso Regression
+4.  ElasticNet Regression
+5.  Polynomial Regression (Degree 2)
+6.  Decision Tree Regressor
+7.  Random Forest Regressor
+8.  AdaBoost Regressor
+9.  Gradient Boosting Regressor
+10. **XGBoost Regressor (Best Performing Model)**
+11. Support Vector Regressor (SVR) with multiple kernels.
+
+## Results
+
+The comprehensive comparison revealed a clear performance hierarchy, with tree-based ensemble models significantly outperforming all others.
+
+  - **Best Model:** **XGBoost Regressor**
+  - **Test Set R² Score:** **0.96**
+  - **Test Set RMSE:** **8825.72**
+
+This demonstrates XGBoost's superior ability to model the complex, non-linear patterns present in the financial data.
+
+| Model | MAE | RMSE | R² Score |
+| :--- | :--- | :--- | :--- |
+| Linear Regression | 19022.77 | 27266.71 | 0.60 |
+| Ridge Regression | 19022.77 | 27266.71 | 0.60 |
+| Decision Tree | 1211.33 | 10977.72 | 0.94 |
+| Random Forest | 928.32 | 9599.34 | 0.95 |
+| Gradient Boosting | 950.60 | 9746.79 | 0.95 |
+| **XGBoost Regressor** | **808.56** | **8825.72** | **0.96** |
+
+## Files in this Repository
+
+  - `ml_LoanPrediction.ipynb`: The primary Jupyter Notebook containing all Python code for the analysis, from data preprocessing to model evaluation.
+  - `ml_LoanPrediction_Report.pdf`: A detailed PDF report summarizing the project's aim, methodology, results, and conclusions.
+  - `exp_2_question.pdf`: The original assignment question sheet for the experiment.
+  - `Screenshots/`: A directory containing screenshots of code outputs and visualizations used in the report.
+  - `README.md`: This file, providing a comprehensive overview of the project.
 
 ## How to Run
 1. Clone the repository:
@@ -44,10 +95,27 @@ git clone https://github.com/R-Jayasree/Machine-Learning.git
 cd Machine-Learning/Assignment2
 ```
 2. Install the required libraries:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Create a `requirements.txt` file with the content from the section below).*
+   
+4. Run the Jupyter Notebook: Open and run the notebook in a Jupyter environment. Ensure the train.csv dataset is in the correct path as specified in the notebook.
+
+## Libraries Used
+
+Create a file named `requirements.txt` and add the following libraries to it:
+
 ```
-pip install pandas numpy matplotlib seaborn scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+jupyter
 ```
-3. Run the Jupyter Notebook: Open and run the ml_Mail.ipynb notebook in a Jupyter environment. Ensure the train.csv dataset is in the correct path as specified in the notebook.
 
 ## Learning Outcomes
 - Applied linear regression to real-world prediction tasks
@@ -55,6 +123,4 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 - Evaluated model using appropriate regression metrics
 - Visualized model accuracy and error distribution
 - Learned the role of cross-validation in reliable evaluation
-
-
 
