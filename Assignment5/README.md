@@ -4,14 +4,14 @@ This repository contains the code and report for a machine learning task that co
 
 **Table of Contents**
 
-  * [Project Overview]
-  * [Dataset]
-  * [Methodology]
-  * [Models Implemented]
-  * [Results]
-  * [Files in this Repository]
-  * [How to Run]
-  * [Libraries Used]
+  * Project Overview
+  * Dataset
+  * Methodology
+  * Models Implemented
+  * Results
+  * Files in this Repository
+  * How to Run
+  * Libraries Used
 
 **Project Overview**
 
@@ -63,18 +63,21 @@ The MLP significantly outperformed the PLA, demonstrating the advantage of hidde
 To replicate this project on your local machine, follow these steps:
 
 1.  **Clone the repository:**
+
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/R-Jayasree/Machine-Learning.git
+    cd Machine-Learning/Assignment4
     ```
+
 2.  **Install the required libraries:**
+
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
+    pip install pandas numpy matplotlib scikit-learn tensorflow
     ```
-3.  **Launch Jupyter Notebook:**
-    ```bash
-    jupyter notebook
-    ```
-4.  **Run the notebook:** Open the `ml_Perceptron.ipynb` file and execute the cells.
+3. **Extract the `Dataset.zip` file**
+
+4.  **Run the Jupyter Notebook:**
+    Open and run the notebook in a Jupyter environment. Ensure the dataset is in the correct path as specified in the notebook.
 
 **Libraries Used**
 
