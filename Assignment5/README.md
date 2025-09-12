@@ -62,18 +62,20 @@ The MLP significantly outperformed the PLA, demonstrating the advantage of hidde
 
 To replicate this project on your local machine, follow these steps:
 
+
 1.  **Clone the repository:**
+
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/R-Jayasree/Machine-Learning.git
+    cd Machine-Learning/Assignment5
     ```
+
 2.  **Install the required libraries:**
+
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
+    pip install pandas numpy matplotlib scikit-learn tensorflow pillow
     ```
-3.  **Launch Jupyter Notebook:**
-    ```bash
-    jupyter notebook
-    ```
+3. **Extract the `Dataset.zip` file**
 4.  **Run the notebook:** Open the `ml_Perceptron.ipynb` file and execute the cells.
 
 **Libraries Used**
