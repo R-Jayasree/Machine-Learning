@@ -10,6 +10,7 @@ The repository is organized into folders, with each folder corresponding to a sp
   * **`Assignment 2/`**: Application of **Linear Regression** for loan amount prediction.
   * **`Assignment 3/`**: Application of **Naive Bayes**, **KNN** & **Support Vector Machine (SVM)** for the classification of e-mail spam data.
   * **`Assignment 4/`**: Ensemble Prediction and Decision Tree Model Evaluation for the Diabetes dataset.
+  * **`Assignment 5/`**: Perceptron vs Multi-Layer Perceptron with Hyperparameter tuning for the Handwritten characters dataset.
 
 ### **Getting Started**
 
