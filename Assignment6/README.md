@@ -83,7 +83,7 @@ To replicate this project on your local machine, follow these steps:
     ```
 4.  **Run the notebook**: Open the `code.ipynb` file and execute the cells.
 
-## 🛠️ Libraries Used
+##  Libraries Used
 
   - pandas
   - numpy
