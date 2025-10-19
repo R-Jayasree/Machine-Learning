@@ -11,6 +11,8 @@ The repository is organized into folders, with each folder corresponding to a sp
   * **`Assignment 3/`**: Application of **Naive Bayes**, **KNN** & **Support Vector Machine (SVM)** for the classification of e-mail spam data.
   * **`Assignment 4/`**: Ensemble Prediction and Decision Tree Model Evaluation for the Diabetes dataset.
   * **`Assignment 5/`**: Perceptron vs Multi-Layer Perceptron with Hyperparameter tuning for the Handwritten characters dataset.
+  * **`Assignment 6/`**: Dimensionality Reduction and Model Evaluation (With and Without PCA)
+  * **`Assignment 7/`**: Clustering Human Activity Recognition Data using K-Means, DBSCAN, and Hierarchical Clustering
 
 ### **Getting Started**
 
