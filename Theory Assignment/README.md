@@ -6,19 +6,24 @@ This repository contains the complete implementation, datasets, and LaTeX report
 
 ## Directory Structure
 
+```
+
+project/
 ├── datasets/
-│ ├── Cellphone.csv # Dataset for Regression task
-│ └── BankNote_Authentication.csv # Dataset for Classification task
+│   ├── Cellphone.csv                  # Dataset for Regression task
+│   └── BankNote_Authentication.csv    # Dataset for Classification task
 │
 ├── screenshots/
-│ ├── regression_plots.png # Visualizations for regression
-│ ├── classification_plots.png # Visualizations for classification
-│ └── ... # Additional plots used in the report
+│   ├── regression_plots.png           # Visualizations for regression
+│   ├── classification_plots.png       # Visualizations for classification
+│   └── ...                            # Additional plots used in the report
 │
-├── code.ipynb # Complete implementation notebook
-├── report.pdf # Final compiled report
-├── report_latex.tex # LaTeX source for the report
-└── question.pdf # Assignment question document
+├── code.ipynb                         # Complete implementation notebook
+├── report.pdf                         # Final compiled report
+├── report_latex.tex                   # LaTeX source for the report
+└── question.pdf                       # Assignment question document
+
+```
 
 ## Assignment Overview
 
@@ -101,18 +106,14 @@ The assignment focuses on implementing and comparing **supervised learning algor
    cd TheoryAssignment
 Open and run the notebook:
 
-jupyter notebook code.ipynb
+```jupyter notebook code.ipynb```
+
 Change the paths of the datasets accordingly. 
 
 ## Learning Outcomes
-Gained hands-on experience in implementing linear models from scratch.
+* Gained hands-on experience in implementing linear models from scratch.
+* Understood matrix-based formulations for regression and classification.
+* Observed the role of regularization and feature scaling in model performance.
+* Compared linear vs. non-linear models (Logistic vs. MLP).
+* Analyzed model robustness under the presence of outliers.
 
-Understood matrix-based formulations for regression and classification.
-
-Observed the role of regularization and feature scaling in model performance.
-
-Compared linear vs. non-linear models (Logistic vs. MLP).
-
-Analyzed model robustness under the presence of outliers.
-
-Practiced scientific documentation using LaTeX and report structuring.
