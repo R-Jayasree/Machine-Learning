@@ -13,6 +13,7 @@ The repository is organized into folders, with each folder corresponding to a sp
   * **`Assignment 5/`**: Perceptron vs Multi-Layer Perceptron with Hyperparameter tuning for the Handwritten characters dataset.
   * **`Assignment 6/`**: Dimensionality Reduction and Model Evaluation (With and Without PCA)
   * **`Assignment 7/`**: Clustering Human Activity Recognition Data using K-Means, DBSCAN, and Hierarchical Clustering
+  * **`Theory Assignment/`**: Linear Regression and Linear Classification using the Mobile Price Prediction and Bank Note Authentication datasets
 
 ### **Getting Started**
 
