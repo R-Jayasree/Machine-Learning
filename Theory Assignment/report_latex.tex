@@ -1,0 +1,307 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+
+\begin{document}
+
+\begin{center}
+     \textbf{Sri Sivasubramaniya Nadar College of Engineering, Chennai}\\
+    (An Autonomous Institution affiliated to Anna University)\\[4pt]
+     Department of Computer Science and Engineering\\[8pt]
+    \textbf{CAT Assignment 1}\\[10pt]
+\end{center}
+    \begin{tabular}{rl}
+        \textbf{Degree \& Branch:} & M.Tech (Integrated) Computer Science and Engineering \\
+        \textbf{Semester:} & V \\
+        \textbf{Subject Code \& Name:} & ICS1502 - Introduction to Machine Learning \\
+        \textbf{Academic Year:} & 2025–2026 (Odd Semester) \\
+        \textbf{Batch:} & 2023–2028 \\
+        \textbf{Name:} & Jayasree R \\
+        \textbf{Register Number:} & 3122 23 7001 019 \\
+    \end{tabular}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\section*{1. Programming Assignment}
+
+\subsection*{1.1 Regression: Mobile Phone Price Prediction}
+\textbf{Aim:} To implement and analyze a Linear Regression model for predicting mobile phone prices using both closed-form and gradient descent methods, with and without L2 regularization, and to evaluate their performance under various preprocessing settings.
+
+\subsubsection*{Objectives}
+\begin{itemize}
+    \item To construct data and label matrices for linear regression.
+    \item To implement regression using closed-form and gradient descent solutions.
+    \item To study the effect of regularization (L2 penalty) on model generalization.
+    \item To compare model performance before and after data standardization.
+    \item To interpret model weights and understand feature importance.
+\end{itemize}
+
+\subsubsection*{Mathematical Description}
+Given a dataset $(X, y)$ with $m$ samples and $n$ features, the linear regression model predicts:
+\[
+\hat{y} = X\theta
+\]
+The closed-form solution (Ordinary Least Squares) is:
+\[
+\theta = (X^T X)^{-1} X^T y
+\]
+For Ridge Regression (L2 regularization):
+\[
+\theta = (X^T X + \lambda I)^{-1} X^T y
+\]
+For Gradient Descent:
+\[
+\theta := \theta - \alpha \frac{1}{m} X^T (X\theta - y)
+\]
+where $\alpha$ is the learning rate and $\lambda$ controls the regularization strength.
+
+\subsubsection*{Results}
+
+\textbf{Exploratory Data Analysis (EDA):}
+\begin{itemize}
+    \item Checked for missing values and feature distributions.
+    \item Generated correlation heatmap to identify feature relationships.
+\end{itemize}
+
+\textbf{Pairplot and Correlation Heatmap:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{theory_ass1/screenshots/pairplot_regression.png}
+    \caption{Pairplot of features in Mobile Price dataset}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{theory_ass1/screenshots/correlation_heatmap_regression.png}
+    \caption{Feature correlation heatmap}
+\end{figure}
+
+\textbf{Performance Metrics:}
+
+\begin{itemize}
+    \item \textbf{Closed-form Solution:}\\
+    MSE = 23062.23, RMSE = 151.86, MAE = 130.32, $R^2$ = 0.9593
+    \item \textbf{Gradient Descent:}\\
+    MSE = 8.2462e+10, RMSE = 287162.01, MAE = 264011.00, $R^2$ = -145463.13
+    \item \textbf{Ridge (Closed-form, $\lambda$=10):}\\
+    Test RMSE = 161.09
+    \item \textbf{Ridge (Gradient Descent, $\lambda$=10):}\\
+    Test RMSE = 1909.43
+\end{itemize}
+
+\textbf{Comparison Across $\lambda$ Values:}
+
+\begin{longtable}{cccccc}
+\toprule
+\textbf{Lambda} & \textbf{No-Scale RMSE} & \textbf{Scale RMSE} & \textbf{No-Scale $R^2$} & \textbf{Scale $R^2$} \\
+\midrule
+0.00 & 151.86 & 151.86 & 0.9593 & 0.9593 \\
+0.01 & 151.86 & 151.87 & 0.9593 & 0.9593 \\
+0.10 & 151.87 & 151.92 & 0.9593 & 0.9593 \\
+1.00 & 152.01 & 152.49 & 0.9592 & 0.9589 \\
+10.00 & 154.24 & 161.09 & 0.9580 & 0.9542 \\
+100.00 & 166.65 & 230.26 & 0.9510 & 0.9065 \\
+\bottomrule
+\end{longtable}
+
+\textbf{Predicted vs Actual Plots:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{theory_ass1/screenshots/actual_vs_predicted.png}
+    \caption{Predicted vs Actual Plot }
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{theory_ass1/screenshots/lamba.png}
+    \caption{Predicted vs Actual for Ridge Regression with different $\lambda$ values}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{theory_ass1/screenshots/features.png}
+    \caption{Feature Importance Plot}
+\end{figure}
+
+
+\subsubsection*{Inference}
+\begin{itemize}
+    \item The closed-form linear regression performed well with a high $R^2$ (0.9593), showing strong predictive power.
+    \item Gradient Descent failed to converge due to improper learning rate or lack of normalization.
+    \item Ridge regularization slightly reduced RMSE, preventing overfitting for larger $\lambda$ values.
+    \item Excessively large $\lambda$ degraded model performance, emphasizing the need for regularization tuning.
+    \item Feature importance analysis showed that certain features had strong linear relationships with price, consistent with correlation heatmap findings.
+    \item Standardization of data improved the stability of results for smaller $\lambda$ values.
+\end{itemize}
+
+
+\newpage
+\subsection*{1.2 Linear Classification: Bank Note Authentication}
+
+\textbf{Aim:} To fit a linear classification model for banknote authentication using logistic regression and neural networks, evaluate L2 regularization, and analyze model robustness under outlier injection.
+
+\subsubsection*{Objectives}
+\begin{itemize}
+    \item To train and test a linear classifier on the Bank Note Authentication dataset.
+    \item To compare model accuracy with and without L2 regularization.
+    \item To analyze the effect of outliers on model performance.
+    \item To visualize 3D decision boundaries using key features.
+\end{itemize}
+
+\subsubsection*{Mathematical Description}
+The logistic regression model predicts the probability:
+\[
+P(y=1|x) = \sigma(w^T x + b)
+\]
+where $\sigma(z) = \frac{1}{1 + e^{-z}}$.
+
+The cost function with L2 regularization:
+\[
+J(w) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)})] + \frac{\lambda}{2m}\|w\|^2
+\]
+
+\subsubsection*{Results}
+
+\textbf{Exploratory Data Analysis:}
+\begin{itemize}
+    \item Dataset was clean and well-balanced across classes.
+    \item Features displayed strong linear separability, as seen in pairplots.
+\end{itemize}
+
+\textbf{Pairplot and Heatmap:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{theory_ass1/screenshots/pairplot_classification.png}
+    \caption{Feature pairplot for Bank Note Authentication dataset}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{theory_ass1/screenshots/correlation_classification.png}
+    \caption{Correlation heatmap of features}
+\end{figure}
+
+\textbf{Model Performance:}
+
+
+\begin{table}[H]
+\centering
+\caption{Performance Comparison of Models}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Train Acc} & \textbf{Test Acc} & \textbf{Precision / Recall / F1}  \\
+\midrule
+No Regularization & 0.9909 & 0.9854 & 0.98–0.99  \\
+L2 (C=1.0)        & 0.9845 & 0.9709 & 0.97       \\
+MLP (1 layer)      & 1.0000 & 1.0000 & 1.00     \\
+\bottomrule
+\end{tabular}
+\label{tab:model_performance}
+\end{table}
+
+
+
+\textbf{Feature Importance Ranking:}
+
+\begin{longtable}{lc}
+\toprule
+\textbf{Feature} & \textbf{Importance Score} \\
+\midrule
+Skewness & 4.8089 \\
+Variance & 4.6579 \\
+Curtosis & 4.3977 \\
+Entropy & 0.2552 \\
+\bottomrule
+\end{longtable}
+
+\textbf{Effect of Outliers:}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{Train Accuracy} & \textbf{Test Accuracy} \\
+\midrule
+Clean Model & 0.9845 & 0.9709 \\
+Outlier Model & 0.8441 & 0.8182 \\
+\bottomrule
+\end{tabular}
+\caption{Impact of outlier injection on model performance}
+\end{table}
+
+\textbf{Confusion Matrices:}
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Classification Metrics between Clean and Outlier Models}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Metric} & \textbf{Class} & \textbf{Clean Model} & \textbf{Outlier Model} & \textbf{Difference ($\Delta$)} \\ 
+\hline
+\textbf{Precision} & 0.0 & 1.00 & 0.86 & -0.14 \\ 
+                   & 1.0 & 0.94 & 0.78 & -0.16 \\ 
+\hline
+\textbf{Recall}    & 0.0 & 0.95 & 0.81 & -0.14 \\ 
+                   & 1.0 & 1.00 & 0.83 & -0.17 \\ 
+\hline
+\textbf{F1-Score}  & 0.0 & 0.97 & 0.83 & -0.14 \\ 
+                   & 1.0 & 0.97 & 0.80 & -0.17 \\ 
+\hline
+\textbf{Accuracy} & -- & 0.97 & 0.82 & -0.15 \\ 
+\textbf{Macro Avg} & -- & 0.97 & 0.82 & -0.15 \\ 
+\textbf{Weighted Avg} & -- & 0.97 & 0.82 & -0.15 \\ 
+\hline
+\end{tabular}
+\label{tab:classification_metrics_comparison}
+\end{table}
+
+
+
+\textbf{3D Visualization of Decision Boundaries:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{theory_ass1/screenshots/3d_plot_classification.png}
+    \caption{3D visualization using top three important features}
+\end{figure}
+
+\subsubsection*{Inference}
+\begin{itemize}
+    \item The dataset was linearly separable; hence, linear models achieved high accuracy.
+    \item Without regularization, the classifier achieved 98.5\% test accuracy, showing minimal overfitting.
+    \item With L2 regularization, accuracy dropped slightly but model stability improved.
+    \item The MLP model achieved perfect accuracy, confirming non-linear models’ superior fitting capacity.
+    \item Feature ranking indicated \textit{skewness}, \textit{variance}, and \textit{curtosis} as the most discriminative attributes.
+    \item Injecting outliers drastically reduced accuracy (from 0.97 to 0.82), revealing that linear models are sensitive to anomalous data.
+    \item The decision boundary visualizations confirmed that most samples were well-separated in 3D space.
+\end{itemize}
+
+\section*{Learning Outcomes}
+\begin{itemize}
+    \item Understood matrix-based implementation of linear regression.
+    \item Gained practical insight into gradient descent convergence behavior.
+    \item Learned to tune and interpret regularization effects on bias–variance trade-off.
+    \item Acquired experience in evaluating linear classifiers using performance metrics and confusion matrices.
+    \item Observed the impact of outliers and importance of data quality in supervised learning.
+    \item Enhanced understanding of data visualization and feature interpretation through pairplots, heatmaps, and 3D projections.
+\end{itemize}
+\section*{GitHub Repository}
+
+The complete source code for this assignment is available in the following repository: 
+\href{https://github.com/R-Jayasree/Machine-Learning} \textbf{https://github.com/R-Jayasree/Machine-Learning}
+
+\end{document}
